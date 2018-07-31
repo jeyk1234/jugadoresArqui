@@ -13,22 +13,22 @@ mongoose.connect('mongodb://heroku_3qjkm7pd:8kfpvft86smvkmuh9qeggapj4v@ds051378.
 
 // importing routes
 //const indexRoutes = require('./routes/jugador');
-var jugador=require('./routes/jugador.js');
+//var jugador=require('./routes/jugador.js');
 
 
 // settings
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
 
 // middlewares
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}))
+app.use(express.json());
 
 // routes
 //app.use('/', indexRoutes);
-app.use('/jugador',jugador);
+app.use('/jugador', require('./routes/jugador'));
 
 app.listen(app.get('port'), () => {
-  console.log(`server on port ${app.get('port')}`);
+  console.log('server puerto 3000');
 });
