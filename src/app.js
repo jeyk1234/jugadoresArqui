@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connection to db
-mongoose.connect('mongodb://localhost/futbolito')
+mongoose.connect('mongodb://heroku_3qjkm7pd:8kfpvft86smvkmuh9qeggapj4v@ds051378.mlab.com:51378/heroku_3qjkm7pd')
   .then(db => console.log('db connected'))
   .catch(err => console.log(err));
 
